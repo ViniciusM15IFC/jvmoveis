@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "q": "Vocês atendem outras cidades além de Videira?",
+      "a": "Sim, atendemos Videira e cidades da região. Entre em contato pra confirmar o atendimento na sua localidade."
+    },
+    {
+      "q": "Como funciona o pagamento?",
+      "a": "As condições de pagamento são combinadas na visita técnica, conforme o escopo do projeto. Fale com a gente pra mais detalhes."
+    },
+    {
+      "q": "A visita técnica tem custo?",
+      "a": "Não, a visita técnica é sem compromisso e sem custo."
+    },
+    {
+      "q": "Que materiais vocês utilizam?",
+      "a": "Trabalhamos com MDF de alta densidade e ferragens com amortecimento de padrão internacional, garantindo durabilidade nas peças."
+    }
+  ]
+}

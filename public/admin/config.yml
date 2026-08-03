@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: ViniciusM15IFC/jvmoveis
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+publish_mode: editorial_workflow
+
+collections:
+  # PROJETOS CONCLUÍDOS — um arquivo por projeto dentro de content/projetos/
+  - name: "projetos"
+    label: "Projetos Concluídos"
+    folder: "content/projetos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Subtítulo", name: "subtitle", widget: "string" }
+      - { label: "Imagem (miniatura)", name: "img", widget: "image" }
+      - { label: "Imagem (ampliada / zoom)", name: "imgFull", widget: "image" }
+
+  # DEPOIMENTOS — um arquivo por depoimento dentro de content/depoimentos/
+  - name: "depoimentos"
+    label: "Depoimentos"
+    folder: "content/depoimentos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Depoimento", name: "quote", widget: "text" }
+      - { label: "Nome do Cliente", name: "name", widget: "string" }
+      - { label: "Cidade / Bairro", name: "local", widget: "string" }
+
+  # FAQ — um único arquivo com a lista de perguntas e respostas
+  - name: "faq"
+    label: "Perguntas Frequentes"
+    files:
+      - name: "faq"
+        label: "Lista de FAQ"
+        file: "content/faq.json"
+        fields:
+          - label: "Perguntas"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Pergunta", name: "q", widget: "string" }
+              - { label: "Resposta", name: "a", widget: "text" }
