@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ZoomIn } from "lucide-react";
 
 import { Lightbox } from "../ui/Lightbox";
+import { Carousel } from "../ui/Carousel";
 import type { Projeto } from "../../app/page";
 
 interface ProjetosProps {
@@ -21,25 +22,30 @@ export function Projetos({ projetos }: ProjetosProps) {
       id="projetos"
       className="scroll-mt-24 px-8 md:px-16 py-20 bg-black"
     >
-      <h2 className="font-display text-3xl mb-10">
+      <h2 className="font-display text-3xl mb-4">
         PROJETOS{" "}
         <span className="text-orange-500">
           CONCLUÍDOS
         </span>
       </h2>
 
-      <div className="grid sm:grid-cols-3 gap-6">
+      <p className="text-neutral-400 text-sm max-w-lg mb-10 leading-relaxed">
+        Confira alguns dos nossos projetos e veja como transformamos espaços.
+      </p>
+
+      <Carousel itemsPerView={{ base: 1, sm: 2, lg: 3 }}>
         {projetos.map((p) => (
           <button
             key={p.title}
             onClick={() => setSelectedProject(p)}
-            className="relative h-72 overflow-hidden group border-2 border-neutral-800 text-left cursor-zoom-in"
+            className="relative h-72 w-full overflow-hidden group border-2 border-neutral-800 text-left cursor-zoom-in"
           >
             <Image
               src={p.img}
               alt={p.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               fill
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
@@ -59,7 +65,7 @@ export function Projetos({ projetos }: ProjetosProps) {
             </div>
           </button>
         ))}
-      </div>
+      </Carousel>
 
       <Lightbox
         project={selectedProject}

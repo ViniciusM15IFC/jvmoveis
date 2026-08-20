@@ -1,7 +1,5 @@
 interface Depoimento {
   quote: string;
-  name: string;
-  local: string;
 }
 
 interface DepoimentosProps {
@@ -22,14 +20,18 @@ export function Depoimentos({
         O QUE DIZEM
       </h2>
 
-      <h2 className="font-display text-3xl text-orange-500 mb-12">
+      <h2 className="font-display text-3xl text-orange-500 mb-4">
         NOSSOS CLIENTES
       </h2>
+
+      <p className="text-400 text-sm max-w-lg mb-12 leading-relaxed">
+        A experiência de quem já confiou na JV Móveis.
+      </p>
 
       <div className="grid sm:grid-cols-3 gap-6">
         {depoimentos.map((d) => (
           <div
-            key={d.name + d.local}
+            key={d.quote}
             className="bg-neutral-50 border-l-4 border-orange-500 p-6"
           >
             <Quote
@@ -40,22 +42,9 @@ export function Depoimentos({
             <p className="text-neutral-700 text-sm leading-relaxed mb-6">
               &ldquo;{d.quote}&rdquo;
             </p>
-
-            <p className="font-display text-xs">
-              {d.name}
-            </p>
-
-            <p className="text-neutral-400 text-xs">
-              {d.local}
-            </p>
           </div>
         ))}
       </div>
-
-      <p className="text-xs text-neutral-400 italic mt-6">
-        * Depoimentos ilustrativos — substitua pelos relatos
-        reais dos seus clientes.
-      </p>
     </section>
   );
 }

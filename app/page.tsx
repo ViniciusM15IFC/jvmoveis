@@ -8,6 +8,7 @@ import { Footer } from "../components/layout/Footer";
 import { Hero } from "../components/sections/Hero";
 import { Ambientes } from "../components/sections/Ambientes";
 import { Processo } from "../components/sections/Processo";
+import { Transformacao } from "../components/sections/Transformacao";
 import { Projetos } from "../components/sections/Projetos";
 import { Depoimentos } from "../components/sections/Depoimentos";
 import { Sobre } from "../components/sections/Sobre";
@@ -29,8 +30,6 @@ export interface Projeto {
 
 export interface Depoimento {
   quote: string;
-  name: string;
-  local: string;
 }
 
 export interface FaqEntry {
@@ -118,7 +117,7 @@ export default function Page() {
 
       <Qualidades />
 
-      <Espacos />
+      <Transformacao />
 
       <Form />
 

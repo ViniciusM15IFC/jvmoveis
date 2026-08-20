@@ -11,7 +11,7 @@ export function Hero()
           <h1 className="font-display text-3xl md:text-5xl leading-[1.05] mb-6 text-orange-500">E EXCLUSIVO!</h1>
           <div className="w-16 h-1 bg-orange-500 mb-6" />
           <p className="text-neutral-300 leading-relaxed mb-8 max-w-md">
-            Projetos personalizados com qualidade, funcionalidade e acabamento impecável.
+            Móveis sob medida com qualidade, funcionalidade e design exclusivo para <strong>Videira e região</strong>
           </p>
           <a
             href="#orcamento"

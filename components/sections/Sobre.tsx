@@ -15,19 +15,17 @@ export function Sobre() {
           <h2 className="font-display text-3xl text-orange-500 mb-6">
             JV MÓVEIS
           </h2>
-
           <p className="text-neutral-300 leading-relaxed mb-4">
-            Com mais de uma década de experiência no mercado de
-            Santa Catarina, a JV Móveis Planejados nasceu do
-            desejo de unir a marcenaria artesanal com a tecnologia
-            de precisão.
+            A JV Móveis nasceu da experiência de profissionais com mais de uma
+            década de atuação em marcenaria e móveis sob medida. Buscamos criar
+            projetos que unam funcionalidade, qualidade e personalidade.
           </p>
 
           <p className="text-neutral-300 leading-relaxed">
-            Nossa produção é 100% própria, utilizando MDF de alta
-            densidade e as peças de maior qualidade. Cada projeto é
-            tratado como único, refletindo a personalidade de
-            nossos clientes.
+            Nossa produção é própria, garantindo maior controle sobre cada etapa e
+            sobre a qualidade dos móveis. Cada projeto é pensado de acordo com o
+            espaço e as necessidades de cada cliente, buscando aproveitar cada
+            ambiente da melhor forma e entregar um resultado único.
           </p>
         </div>
 

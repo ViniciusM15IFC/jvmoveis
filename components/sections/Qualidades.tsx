@@ -3,6 +3,8 @@ import {
   ShieldCheck,
   Settings,
   Handshake,
+  LayoutGrid,
+  PenTool,
   type LucideIcon,
 } from "lucide-react";
 
@@ -12,19 +14,19 @@ const promessas: {
 }[] = [
   {
     icon: Ruler,
-    title: "Projetos Personalizados",
+    title: "Projetos Sob Medida",
   },
   {
-    icon: ShieldCheck,
-    title: "Materiais de Qualidade",
+    icon: PenTool,
+    title: "Qualidade nos Detalhes",
   },
   {
-    icon: Settings,
-    title: "Acabamento Impecável",
+    icon: LayoutGrid,
+    title: "Projeto 3D",
   },
   {
     icon: Handshake,
-    title: "Compromisso e Confiança",
+    title: "Atendimento Personalizado",
   },
 ];
 

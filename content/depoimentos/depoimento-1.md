@@ -1,5 +1,3 @@
 ---
-quote: "Superou nossas expectativas. A cozinha ficou exatamente como no projeto 3D que nos mostraram."
-name: "Teste(Depoimento Fictício)"
-local: "Videira - SC"
+quote: "Ficou muito bom os móveis, minha mãe gostou bastante. Ótimo acabamento e ótimo atendimento."
 ---

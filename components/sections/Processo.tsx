@@ -8,11 +8,35 @@ import {
 } from "lucide-react";
 
 const processo: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: PhoneCall, title: "Contato Inicial", text: "Você chama no WhatsApp ou preenche o formulário contando sua ideia." },
-  { icon: MapPinned, title: "Visita Técnica", text: "Vamos até o local medir o espaço e entender suas necessidades, sem compromisso." },
-  { icon: LayoutGrid, title: "Projeto 3D", text: "Você visualiza o ambiente pronto em alta definição antes da produção começar." },
-  { icon: Factory, title: "Produção", text: "Fabricação própria com MDF de alta densidade e ferragens de padrão internacional." },
-  { icon: Truck, title: "Montagem e Entrega", text: "Instalação profissional no seu espaço" },
+  {
+    icon: PhoneCall,
+    title: "Contato Inicial",
+    text: "Fale com a gente pelo WhatsApp ou formulário e nos conte a sua ideia."
+  },
+
+  {
+    icon: MapPinned,
+    title: "Visita Técnica",
+    text: "Vamos até o seu espaço para tirar as medidas e entender suas necessidades."
+  },
+
+  {
+    icon: LayoutGrid,
+    title: "Projeto 3D",
+    text: "Visualize seu ambiente planejado antes da produção começar."
+  },
+
+  {
+    icon: Factory,
+    title: "Produção",
+    text: "Fabricamos seu projeto em nossa marcenaria com MDF de alta qualidade."
+  },
+
+  {
+    icon: Truck,
+    title: "Montagem e Entrega",
+    text: "Entregamos e instalamos os móveis no seu espaço, de forma rápida e eficiente."
+  },
 ];
 
 export function Processo() {

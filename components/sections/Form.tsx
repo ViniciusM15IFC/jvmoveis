@@ -16,7 +16,7 @@ const ambientes = [
   "Salas",
   "Escritórios",
   "Áreas de Serviço",
-  "E Muito Mais!",
+  "Outro",
 ];
 
 export function Form() {
@@ -74,62 +74,82 @@ export function Form() {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-5"
         >
 
-          <input
-            type="text"
-            name="nome"
-            required
-            placeholder="Seu nome"
-            value={form.nome}
-            onChange={handleChange}
-            className="border-2 border-black px-4 py-3 font-body text-sm focus:outline-none focus:border-orange-500"
-          />
+          <label className="flex flex-col gap-1.5">
+            <span className="font-display text-[11px] uppercase tracking-widest text-neutral-500">
+              Nome
+            </span>
+            <input
+              type="text"
+              name="nome"
+              required
+              placeholder="Seu nome"
+              value={form.nome}
+              onChange={handleChange}
+              className="border border-neutral-300 px-4 py-3 font-body text-sm transition-colors focus:outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
+            />
+          </label>
 
-          <input
-            type="tel"
-            name="telefone"
-            required
-            placeholder="Seu telefone"
-            value={form.telefone}
-            onChange={handleChange}
-            className="border-2 border-black px-4 py-3 font-body text-sm focus:outline-none focus:border-orange-500"
-          />
+          <label className="flex flex-col gap-1.5">
+            <span className="font-display text-[11px] uppercase tracking-widest text-neutral-500">
+              Telefone
+            </span>
+            <input
+              type="tel"
+              name="telefone"
+              required
+              placeholder="Seu telefone"
+              value={form.telefone}
+              onChange={handleChange}
+              className="border border-neutral-300 px-4 py-3 font-body text-sm transition-colors focus:outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
+            />
+          </label>
 
-          <select
-            name="ambiente"
-            required
-            value={form.ambiente}
-            onChange={handleChange}
-            className="border-2 border-black px-4 py-3 font-body text-sm focus:outline-none focus:border-orange-500 bg-white"
-          >
-            <option value="">
+          <label className="flex flex-col gap-1.5">
+            <span className="font-display text-[11px] uppercase tracking-widest text-neutral-500">
               Ambiente de interesse
-            </option>
-
-            {ambientes.map((ambiente) => (
-              <option
-                key={ambiente}
-                value={ambiente}
-              >
-                {ambiente}
+            </span>
+            <select
+              name="ambiente"
+              required
+              value={form.ambiente}
+              onChange={handleChange}
+              className="border border-neutral-300 px-4 py-3 font-body text-sm transition-colors focus:outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 bg-white"
+            >
+              <option value="">
+                Selecione um ambiente
               </option>
-            ))}
-          </select>
 
-          <textarea
-            name="mensagem"
-            rows={4}
-            placeholder="Conte um pouco sobre o seu projeto"
-            value={form.mensagem}
-            onChange={handleChange}
-            className="border-2 border-black px-4 py-3 font-body text-sm focus:outline-none focus:border-orange-500 resize-none"
-          />
+              {ambientes.map((ambiente) => (
+                <option
+                  key={ambiente}
+                  value={ambiente}
+                >
+                  {ambiente}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="flex flex-col gap-1.5">
+            <span className="font-display text-[11px] uppercase tracking-widest text-neutral-500">
+              Conte seu projeto
+            </span>
+            <textarea
+              name="mensagem"
+              rows={4}
+              placeholder="Conte um pouco sobre o seu projeto"
+              value={form.mensagem}
+              onChange={handleChange}
+              className="border border-neutral-300 px-4 py-3 font-body text-sm transition-colors focus:outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 resize-none"
+            />
+          </label>
 
           <button
             type="submit"
-            className="flex items-center justify-center gap-2 bg-orange-500 text-black font-display text-sm px-8 py-4 hover:bg-orange-400 transition-colors"
+            className="flex items-center justify-center gap-2 bg-orange-500 text-black font-display text-sm px-8 py-4 mt-2 hover:bg-orange-400 transition-colors"
           >
             <Send size={18} />
 
