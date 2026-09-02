@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
     type: "website",
     locale: "pt_BR",
-    url: "/",
+    url: "/images/og.webp",
   },
 
   verification: {
