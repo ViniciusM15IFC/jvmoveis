@@ -22,13 +22,19 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "JV Móveis Sob Medida | Videira e Região",
-
     description:
       "Projetos personalizados, produção própria e montagem profissional para transformar seu ambiente.",
-
     type: "website",
     locale: "pt_BR",
-    url: "/images/og.webp",
+    url: "/",
+    images: [
+      {
+        url: "/images/og.webp",
+        width: 1200,
+        height: 630,
+        alt: "JV Móveis Sob Medida | Videira e Região",
+      },
+    ],
   },
 
   verification: {
