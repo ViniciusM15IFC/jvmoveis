@@ -9,8 +9,27 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "JV Móveis Sob Medida",
-  description: "Móveis planejados sob medida para o seu espaço.",
+  metadataBase: new URL("https://jvmoveis.netlify.app"),
+
+  title: "JV Móveis Sob Medida | Videira e Região",
+
+  description:
+    "Móveis sob medida em Videira e região. Projetos personalizados, produção própria e montagem profissional para transformar seu ambiente.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "JV Móveis Sob Medida | Videira e Região",
+
+    description:
+      "Projetos personalizados, produção própria e montagem profissional para transformar seu ambiente.",
+
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+  },
 
   verification: {
     google: "4WfD_V-Lxs-dUt7U3z3uVBRuhFk04Jwrim3B1fm-TB4",
@@ -24,9 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={montserrat.variable}>
-        {children}
-      </body>
+      <body className={montserrat.variable}>{children}</body>
     </html>
   );
 }

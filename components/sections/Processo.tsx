@@ -35,7 +35,7 @@ const processo: { icon: LucideIcon; title: string; text: string }[] = [
   {
     icon: Truck,
     title: "Montagem e Entrega",
-    text: "Entregamos e instalamos os móveis no seu espaço, de forma rápida e eficiente."
+    text: "Entregamos e instalamos os móveis no seu espaço, da forma mais eficiente possivel."
   },
 ];
 

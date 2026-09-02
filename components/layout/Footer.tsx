@@ -79,21 +79,20 @@ export function Footer() {
               </li>
 
               <li>
-                {/* Placeholder — substitua pelo @ real do Instagram */}
                 <a
-                  href="https://instagram.com/jvmoveis"
+                  href="https://instagram.com/sobmedidajvmoveis/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-neutral-300 hover:text-orange-500 transition-colors"
                 >
                   <InstagramIcon size={16} />
-                  @jvmoveis
+                  @sobmedidajvmoveis
                 </a>
               </li>
 
               <li className="flex items-center gap-2 text-sm text-neutral-300">
                 <MapPin size={16} className="text-orange-500 shrink-0" />
-                Bairro Santa Lúcia
+                Bairro Santa Lúcia - Videira/SC
               </li>
             </ul>
           </div>
@@ -119,17 +118,6 @@ export function Footer() {
             </p>
           </div>
 
-        </div>
-      </div>
-
-      {/* RODAPÉ DE DESENVOLVIMENTO */}
-      <div className="bg-neutral-950 border-t border-neutral-900/50 py-4 px-8 md:px-16 text-[11px] text-neutral-300 font-body">
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 text-center">
-          <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse shrink-0" />
-
-          <span>
-            Ambiente de testes: Este site ainda está em desenvolvimento.
-          </span>
         </div>
       </div>
     </>

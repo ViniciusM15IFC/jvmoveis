@@ -66,17 +66,6 @@ export function Contato() {
 
                 </div>
 
-                <div className="flex items-center justify-center gap-2 text-neutral-300 pt-6 border-t border-orange-500/20">
-                    <MapPin
-                        className="text-orange-500"
-                        size={18}
-                    />
-
-                    <span className="text-sm">
-                        Bairro Santa Lúcia
-                    </span>
-                </div>
-
             </div>
         </section>
     );

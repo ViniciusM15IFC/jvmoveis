@@ -38,7 +38,7 @@ export function Projetos({ projetos }: ProjetosProps) {
           <button
             key={p.title}
             onClick={() => setSelectedProject(p)}
-            className="relative h-72 w-full overflow-hidden group border-2 border-neutral-800 text-left cursor-zoom-in"
+            className="relative md:h-100 h-80 w-full overflow-hidden group border-2 border-neutral-800 text-left cursor-zoom-in"
           >
             <Image
               src={p.img}
@@ -46,6 +46,7 @@ export function Projetos({ projetos }: ProjetosProps) {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+              loading="lazy"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />

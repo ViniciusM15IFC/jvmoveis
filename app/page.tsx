@@ -13,11 +13,11 @@ import { Projetos } from "../components/sections/Projetos";
 import { Depoimentos } from "../components/sections/Depoimentos";
 import { Sobre } from "../components/sections/Sobre";
 import { Qualidades } from "../components/sections/Qualidades";
-import { Espacos } from "../components/sections/Espacos";
 import { Form } from "../components/sections/Form";
 import { Faq } from "../components/sections/Faq";
 import { Contato } from "../components/sections/Contato";
 
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 // ---------- TIPOS ----------
 
@@ -30,11 +30,30 @@ export interface Projeto {
 
 export interface Depoimento {
   quote: string;
+  name: string;
+  local: string;
 }
 
 export interface FaqEntry {
   q: string;
   a: string;
+}
+
+interface TransformacaoRaw {
+  titulo: string;
+  antes: string;
+  projeto3d: string;
+  resultado: string;
+}
+
+export interface EtapaTransformacao {
+  label: string;
+  img: string;
+}
+
+export interface CasoTransformacao {
+  titulo: string;
+  etapas: [EtapaTransformacao, EtapaTransformacao, EtapaTransformacao];
 }
 
 
@@ -90,6 +109,20 @@ function readFaq(): FaqEntry[] {
 }
 
 
+function readTransformacao(): CasoTransformacao[] {
+  const raws = readCollection<TransformacaoRaw>("transformacao");
+
+  return raws.map((r) => ({
+    titulo: r.titulo,
+    etapas: [
+      { label: "ANTES", img: r.antes },
+      { label: "PROJETO 3D", img: r.projeto3d },
+      { label: "RESULTADO", img: r.resultado },
+    ],
+  }));
+}
+
+
 // ---------- PÁGINA ----------
 
 export default function Page() {
@@ -97,9 +130,12 @@ export default function Page() {
   const depoimentos =
     readCollection<Depoimento>("depoimentos");
   const faqs = readFaq();
+  const transformacaoCasos = readTransformacao();
 
   return (
     <div className="bg-black text-white">
+
+      <LocalBusinessSchema />
 
       <Header />
 
@@ -117,7 +153,7 @@ export default function Page() {
 
       <Qualidades />
 
-      <Transformacao />
+      <Transformacao casos={transformacaoCasos} />
 
       <Form />
 

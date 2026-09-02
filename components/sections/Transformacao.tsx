@@ -6,39 +6,21 @@ interface Etapa {
   img: string;
 }
 
-interface CasoTransformacao {
+export interface CasoTransformacao {
   titulo: string;
   etapas: [Etapa, Etapa, Etapa];
 }
 
-const casos: CasoTransformacao[] = [
-  {
-    titulo: "Cozinha Planejada",
-    etapas: [
-      { label: "ANTES", img: "https://picsum.photos/seed/jv-cozinha-antes/700/900" },
-      { label: "PROJETO 3D", img: "https://picsum.photos/seed/jv-cozinha-3d/700/900" },
-      { label: "RESULTADO", img: "https://picsum.photos/seed/jv-cozinha-final/700/900" },
-    ],
-  },
-  {
-    titulo: "Dormitório Planejado",
-    etapas: [
-      { label: "ANTES", img: "https://picsum.photos/seed/jv-quarto-antes/700/900" },
-      { label: "PROJETO 3D", img: "https://picsum.photos/seed/jv-quarto-3d/700/900" },
-      { label: "RESULTADO", img: "https://picsum.photos/seed/jv-quarto-final/700/900" },
-    ],
-  },
-  {
-    titulo: "Home Office",
-    etapas: [
-      { label: "ANTES", img: "https://picsum.photos/seed/jv-escritorio-antes/700/900" },
-      { label: "PROJETO 3D", img: "https://picsum.photos/seed/jv-escritorio-3d/700/900" },
-      { label: "RESULTADO", img: "https://picsum.photos/seed/jv-escritorio-final/700/900" },
-    ],
-  },
-];
+interface TransformacaoProps {
+  casos: CasoTransformacao[];
+}
 
-export function Transformacao() {
+export function Transformacao({ casos }: TransformacaoProps) {
+  // Sem nenhum caso cadastrado no CMS → a seção inteira não é renderizada
+  if (!casos || casos.length === 0) {
+    return null;
+  }
+
   return (
     <section
       id="transformacao"
@@ -54,16 +36,10 @@ export function Transformacao() {
       <Carousel itemsPerView={{ base: 1 }}>
         {casos.map((caso) => (
           <div key={caso.titulo}>
-            {/*
-              Mobile: empilhado (1 coluna), mas a altura de cada imagem é
-              fixada em vh (não em aspect-ratio) — assim as 3 juntas ocupam
-              uma fração previsível da altura da TELA, não da largura.
-              Desktop: volta a ser 3 colunas lado a lado com aspect-ratio normal.
-            */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-5">
               {caso.etapas.map((etapa) => (
                 <div key={etapa.label}>
-                  <div className="relative h-[18vh] md:h-auto md:aspect-[4/3] overflow-hidden border border-neutral-800">
+                  <div className="relative h-[25vh] md:h-auto md:aspect-[4/3] overflow-hidden border border-neutral-800">
                     <Image
                       src={etapa.img}
                       alt={`${caso.titulo} — ${etapa.label}`}

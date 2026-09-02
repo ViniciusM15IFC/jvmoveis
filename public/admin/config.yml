@@ -20,6 +20,18 @@ collections:
       - { label: "Imagem (miniatura)", name: "img", widget: "image" }
       - { label: "Imagem (ampliada / zoom)", name: "imgFull", widget: "image" }
 
+  # TRANSFORMAÇÃO (Antes → Projeto 3D → Resultado) — um arquivo por caso
+  - name: "transformacao"
+    label: "Transformações (Antes/Depois)"
+    folder: "content/transformacao"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título do Caso", name: "titulo", widget: "string" }
+      - { label: "Foto: Antes", name: "antes", widget: "image" }
+      - { label: "Foto: Projeto 3D", name: "projeto3d", widget: "image" }
+      - { label: "Foto: Resultado Final", name: "resultado", widget: "image" }
+
   # DEPOIMENTOS — um arquivo por depoimento dentro de content/depoimentos/
   - name: "depoimentos"
     label: "Depoimentos"

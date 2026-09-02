@@ -135,7 +135,7 @@ export function Form() {
 
           <label className="flex flex-col gap-1.5">
             <span className="font-display text-[11px] uppercase tracking-widest text-neutral-500">
-              Conte seu projeto
+              Conte sobre seu projeto
             </span>
             <textarea
               name="mensagem"

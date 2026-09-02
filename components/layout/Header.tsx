@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import {
   House,
   Workflow,
@@ -21,7 +24,46 @@ const nav = [
   { label: "Contato", href: "#contato", icon: Phone, iconOnly: true },
 ];
 
+function useMobileScrollNav() {
+  const [visible, setVisible] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    lastY.current = window.scrollY;
+
+    function handleScroll() {
+      const y = window.scrollY;
+      const diff = y - lastY.current;
+
+      // No topo
+      if (y < 40) {
+        setVisible(false);
+      }
+      // Começou a rolar para baixo
+      else if (diff > 8) {
+        setVisible(true);
+      }
+      // Começou a rolar para cima
+      else if (diff < -8) {
+        setVisible(false);
+      }
+
+      lastY.current = y;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return visible;
+}
+
 export function Header() {
+  const mobileNavVisible = useMobileScrollNav();
+
   return (
     <header className="sticky top-0 z-50 bg-black border-b border-orange-500/30">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
@@ -57,6 +99,40 @@ export function Header() {
           </a>
         </nav>
       </div>
+
+      <nav
+        aria-label="Navegação"
+        className={`md:hidden fixed right-2 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-3 rounded-full bg-black/80 backdrop-blur-sm border border-orange-500/30 px-2 py-3 transition-all duration-300 ease-out ${
+          mobileNavVisible
+            ? "opacity-100 translate-x-0 pointer-events-auto"
+            : "opacity-0 translate-x-0 pointer-events-none"
+        }`}
+      >
+        {nav.map((item) => {
+          const Icon = item.icon;
+
+          return (
+            <a
+              key={item.label}
+              href={item.href}
+              aria-label={item.label}
+              className="flex items-center justify-center text-neutral-300 hover:text-orange-500 transition-colors"
+            >
+              <Icon size={16} strokeWidth={2} />
+            </a>
+          );
+        })}
+
+        <a
+          href="https://instagram.com/sobmedidajvmoveis/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="flex items-center justify-center text-neutral-300 hover:text-orange-500 transition-colors"
+        >
+          <InstagramIcon size={16} />
+        </a>
+      </nav>
     </header>
   );
 }

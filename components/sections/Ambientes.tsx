@@ -18,7 +18,7 @@ const ambientes: { icon: LucideIcon; label: string }[] = [
   { icon: Warehouse, label: "Áreas de Serviço" },
   { icon: Shirt, label: "Closets" },
   { icon: Bath, label: "Banheiros" },
-  { icon: Store, label: "Você escolhe!" },
+  { icon: Store, label: "E Muito Mais!" },
 ];
 
 export function Ambientes() {

@@ -31,9 +31,10 @@ export function Sobre() {
 
         <div className="min-w-0 relative h-80 w-full">
           <Image
-            src="https://images.unsplash.com/photo-1622150162934-b5f8e8c2b3f5?w=1000&q=80"
+            src="/images/sobre.webp"
             alt="Marcenaria artesanal JV Móveis"
             className="w-full h-80 object-cover border-2 border-orange-500"
+            sizes="(max-width: 768px) 100vw, 50vw"
             fill
           />
         </div>

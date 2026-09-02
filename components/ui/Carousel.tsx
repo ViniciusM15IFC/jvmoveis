@@ -102,15 +102,15 @@ export function Carousel({
   const slideWidth = 100 / perView;
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative w-full min-w-0 ${className}`}>
       <div
-        className="overflow-hidden"
+        className="w-full min-w-0 overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className="flex -mx-2 transition-transform duration-500 ease-out"
+          className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${index * slideWidth}%)` }}
         >
           {items.map((child, i) => (
