@@ -1,3 +1,5 @@
+Site para exibir e divulgar os serviços da JV Móveis sob Medida de Videira - SC
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 Deployed in: https://jvmoveis.netlify.app/
