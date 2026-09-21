@@ -25,14 +25,14 @@ export function Ambientes() {
   return (
     <section
       id="ambientes"
-      className="md:flex items-start justify-start scroll-mt-24 px-8 md:px-16 py-16 bg-black border-t border-orange-500/30"
+      className="lg:flex items-start justify-start scroll-mt-24 px-8 md:px-16 py-16 bg-black border-t border-orange-500/30"
     >
-      <div className="md:mr-16 mb-10 md:mb-0">
+      <div className="lg:mr-16 mb-10 lg:mb-0">
         <h2 className="font-display text-2xl md:text-3xl mb-2">MÓVEIS SOB MEDIDA PARA</h2>
         <h2 className="font-display text-2xl md:text-3xl text-orange-500 mb-10">TODOS OS AMBIENTES!</h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 flex-1">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 flex-1">
         {ambientes.map(({ icon: Icon, label }) => (
           <div key={label} className="flex items-center gap-3 border-b border-neutral-800 pb-3">
             <Icon className="text-orange-500 shrink-0" size={26} strokeWidth={1.75} />
